@@ -1,0 +1,19 @@
+<div class="container-fluid cardsbody">
+    <div class="container d-flex">
+        <div class="row">
+              <ng-container *ngFor="let item of productList">
+                <div class="card" style="width: 18rem;">
+                  <img src="{{item.image}}" class="card-img-top" alt="...">
+                  <hr>
+                  <div class="card-body">
+                    <h5 class="card-title"><h2>{{item.title}}</h2></h5>
+                    <p class="card-text">{{item.category}}</p>
+                    <p class="card-text">Price: ₹<strong>{{item.price}}</strong></p>
+                    <a  class="btn btn-primary mb-1" (click)="addtoCart(item)">Add to cart</a>
+                  </div>
+                </div>
+              </ng-container>
+            
+        </div>
+    </div>
+</div>

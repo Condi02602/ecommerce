@@ -1,0 +1,24 @@
+.cartempty{
+    margin: 20px auto;
+    padding: 20px 40px;
+}
+.card-body{
+    margin: 20px auto;
+    padding: 20px 40px;
+    text-align: center;
+}
+.card-body img{
+    height: 200px;
+    width: 200px;
+}
+.card-table{
+    display: flex;
+    min-width: none;
+    position: relative;
+    word-wrap: break-word;
+    background-color: azure;
+    border: 1px solid black;
+    border-radius: 1px;
+    flex-direction: column;
+    margin: 20px auto;
+}

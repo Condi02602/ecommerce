@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CartapiService } from '../services/cartapi.service';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
 
   disabledBuy:boolean = false
-  constructor(private route: Router) {}
+  constructor(private route: Router, private cartApi: CartapiService) {}
   // menuType for changing Navbar content
   menuType: string = 'default';
   // cart 
@@ -18,17 +19,21 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     
-    this.route.events.subscribe((val: any) => {
-      if (val.url) {
-        if (localStorage.getItem('AdminLogin') === 'Admin' && val.url.includes("Admin")) {
-          this.menuType = 'Admin';
-        } else if (localStorage.getItem('WhoLogin') === 'Customer') {
-          this.menuType = 'Customer'; 
-        } else {
-          this.menuType = 'default';
-        }
-      }
-    });
+    // this.route.events.subscribe((val: any) => {
+    //   if (val.url) {
+    //     if (localStorage.getItem('AdminLogin') === 'Admin' && val.url.includes("Admin")) {
+    //       this.menuType = 'Admin';
+    //     } else if (localStorage.getItem('WhoLogin') === 'Customer') {
+    //       this.menuType = 'Customer'; 
+    //     } else {
+    //       this.menuType = 'default';
+    //     }
+    //   }
+    // });
+
+    this.cartApi.getProductData().subscribe(res => {
+      this.cartItem = res.length
+    })
   }
   // For closing when click on content
   closeToggle() {
@@ -37,6 +42,8 @@ export class HeaderComponent implements OnInit {
       checkbox.checked = false;
     }
   }
+
+  
 
 }
 

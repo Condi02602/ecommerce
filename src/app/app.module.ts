@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -22,6 +22,8 @@ import { FooterComponent } from './footer/footer.component';
 import { ProductFeaturedComponent } from './product-featured/product-featured.component';
 import { WhatWeDoComponent } from './what-we-do/what-we-do.component';
 import { OurBrandsComponent } from './our-brands/our-brands.component';
+import { ProductsComponent } from './products/products.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -34,12 +36,15 @@ import { OurBrandsComponent } from './our-brands/our-brands.component';
     FooterComponent,
     ProductFeaturedComponent,
     WhatWeDoComponent,
-    OurBrandsComponent
+    OurBrandsComponent,
+    ProductsComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MatSnackBarModule,
     MatButtonModule,
     MatFormFieldModule,
