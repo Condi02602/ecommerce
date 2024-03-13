@@ -1,0 +1,44 @@
+<nav [ngSwitch]="menuType">
+
+    <div class="logo">
+       Brand
+    </div>
+
+    <div class="nav-search">
+
+        <input #SearchInput type="text" class="form-control" placeholder="Search Product">
+        <button class="btn btn-primary">Search</button>
+      
+    </div>
+        
+    <input type="checkbox" id="click">
+
+    <label for="click" class="menu-btn">
+       <i class="fas fa-bars"></i>
+    </label>
+
+
+    <ul *ngSwitchCase="'default'" (click)="closeToggle()">
+        <li><a class="active" routerLink="/">Home</a></li>
+        <li><a routerLink="/SeeTopProducts">Top Products</a></li>
+        <li>
+          <a>Services</a>
+          <div class="dropdown-toggle" hidden>&#9662;</div>
+          <ul class="dropdown-menu">
+              <li><a >AMC Support</a></li>
+              <li><a >Hardware/Software Support</a></li>
+              <li><a >Server Administrator</a></li>
+          </ul>
+         </li>
+
+        <li><a routerLink="/signup">Register</a></li>
+        <li class="trigger"><a routerLink="/signup">Cart({{cartItem}})</a></li>
+        <!-- Hidden content to be displayed on hover -->
+
+        <!-- Mobile View Display -->
+      <li class="mobileView"><a routerLink="/signup">AMC Support</a></li>
+      <li class="mobileView"><a routerLink="/signup">Hardware/Software Support</a></li>
+      <li class="mobileView"><a routerLink="/signup">Server Administrator</a></li>
+    </ul>
+ 
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>

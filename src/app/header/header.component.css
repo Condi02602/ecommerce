@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+nav {
+  display: flex;
+  height: 70px;
+  width: 100%;
+  background-color: #090979;
+   
+  
+
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px 0 100px;
+  flex-wrap: wrap;
+}
+
+nav .logo {
+  
+
+  color: #fff;
+  font-size: 35px;
+  font-weight: 600;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 0 5px;
+
+}
+
+nav ul li a {
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+  color: #111;
+  background: #fff;
+}
+
+nav .menu-btn i {
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+
+nav ul li.mobileView {
+  visibility: hidden; /* Show the mobileView list items in mobile view */
+  display: none;
+   /* Adjust margin as needed */
+}
+
+
+@media (max-width: 1200px) {
+  nav .menu-btn i {
+    display: block;
+    z-index: 1000;
+  }
+ 
+  nav ul li.mobileView {
+    visibility:visible; /* Show the mobileView list items in mobile view */
+    display: block;
+    
+     /* Adjust margin as needed */
+  }
+
+  #hideServiceDesktopView{
+    display: none;
+  }
+
+
+  #click:checked ~ .menu-btn i:before {
+    content: "\f00d";
+    color: blueviolet;
+  }
+ 
+  
+  nav ul {
+    z-index: 100;
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    background: #111;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+  }
+
+  #click:checked ~ ul {
+    left: 0;
+  }
+
+  nav ul li {
+    width: 100%;
+    margin: 40px 0;
+   
+  }
+
+  nav ul li a {
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  
+  }
+
+  #click:checked ~ ul li a {
+    margin-left: 0px;
+  }
+
+  nav ul li a.active,
+  nav ul li a:hover {
+    background: none;
+    color: cyan;
+  }
+}
+
+
+
+
+
+
+
+/*  Dropdown CSS */
+
+nav ul li .dropdown-toggle {
+  cursor: pointer;
+}
+
+nav ul li .dropdown-menu {
+  display: none;
+  position: absolute;
+  background: #111;
+  padding: 10px;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+nav ul li:hover .dropdown-menu {
+  display: block;
+  z-index: 1000;
+}
+
+nav ul li .dropdown-menu a {
+  display: block;
+  
+  color: #f2f2f2;
+  text-decoration: none;
+  padding: 10px 60px;
+  transition: background 0.3s ease;
+ 
+}
+
+nav ul li .dropdown-menu a:hover {
+  background: #444;
+}
+
+
+
+
+
+ /* Initially hide the content */
+ .hidden-content {
+    display: none;
+   
+}
+
+/* Show the content when hovering over the trigger element */
+.trigger:hover + .hidden-content {
+    display: block;
+}
+
+/* Style for better visibility, you can adjust as needed */
+.trigger {
+    cursor: pointer;
+    text-decoration: rgb(36, 182, 61);
+    color: orange;
+}
+
+/* Additional styling for the hidden content */
+.hidden-content {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    position: absolute;
+    z-index: 1;
+    margin-top: 5px;
+    list-style: none;
+}
+
+
+
+
+/* Search CSS */
+nav .nav-search {
+  flex: 1;
+  margin-top: 5px;
+  display: flex;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+nav .nav-search input {
+  flex: 1;
+  color: blueviolet;
+  border: 1px solid blueviolet;
+  height: 45px;
+  border-right: 0px;
+  border-radius: 5px 0 0 5px; /* Rounded corners for the left side */
+}
+
+nav .nav-search button {
+  color: white; /* Set text color to improve visibility */
+  background-color: blueviolet;
+  border: 1px solid blueviolet;
+  height: 45px;
+  border-left: 0px;
+  border-radius: 0 5px 5px 0; /* Rounded corners for the right side */
+}
+
+/* Additional styling for responsiveness and modern UI */
+.nav-search {
+  display: flex;
+  align-items: center;
+}
+
+.nav-search input {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.nav-search button {
+  min-width: 100px; /* Adjust the width based on your preference */
+  display: block;  
+}
+
+/* Style for suggested result list */
+.suggested-result {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.suggested-result li {
+  margin-top: 5px;
+}
+
+.suggested-result a {
+  text-decoration: none;
+  color: #333;
+  /* Add additional styling as needed */
+}
+
+/* Media query for responsiveness */
+@media (max-width: 767px) {
+  nav .nav-search {
+    margin: 5px 0;
+    position: relative;
+    right: 15%;
+  }
+
+  nav .nav-search input,
+  nav .nav-search button {
+    height: 40px;
+    visibility: visible;
+    border-radius: 5px 5px 5px 5px;
+  
+  }
+
+  nav .nav-search button{
+    display: none;
+  }
+
+
+
+  .nav-search button {
+    min-width: 20px; /* Adjust the width based on your preference */
+    display: block;  
+  }
+
+  .logo {
+    position: relative;
+    right: 30%;
+  
+  }
+
+
+  /* search */
+ 
+}
+
+
+
+/* General Styles */
+.suggested-result {
+  position: absolute;
+  display: list-item;
+  display: none; /* Hide the results by default */
+  z-index: 10;
+  background-color: white;
+  top: 10%;
+  border: 1px solid #ddd;
+  width: 50%;
+  flex-direction: column;
+}
+
+.suggested-result li {
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+
+.suggested-result li a {
+  cursor: pointer;
+  color: blueviolet;
+  text-shadow: #333;
+  color: black;
+}
+
+/* Mobile Styles */
+@media (max-width: 1200px) {
+  #sr {
+    left: 100%;
+    display: block; /* Change display to block within the media query */
+  }
+
+  #sr li {
+    margin: 0;
+    border: 1px solid #ddd;
+    padding: 5px;
+  }
+
+  #sr li a {
+    z-index: 1000;
+    cursor: pointer;
+    color: blueviolet;
+    text-shadow: #333;
+    color: wheat;
+    /* background-color: whitesmoke; */
+    
+  }
+}
