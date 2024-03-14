@@ -22,3 +22,8 @@
     flex-direction: column;
     margin: 20px auto;
 }
+
+.responsiveTable{
+    max-width: 100%;
+    overflow: auto;
+}

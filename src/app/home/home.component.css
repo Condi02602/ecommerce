@@ -1,4 +1,3 @@
-
 .carousel-item img{
     width: 100%;
     height: 75vh;
@@ -40,38 +39,4 @@ body {
   display: grid;
   align-items: center;
   font-family: 'Quicksand', sans-serif;
-}
-
-
-  
-
-  /* parterns css */
-
-  /* Add some hover effect and transition to the WhatsApp float button */
-.whatsapp_float {
-  position: fixed;
-  width: 60px;
-  height: 60px;
-  bottom: 40px;
-  color: #FFF;
-  text-align: center;
-  font-size: 30px;
-  z-index: 100;
-  right: 5%;
-  transition: background-color 0.3s, transform 0.3s ease-out;
-}
-
-.whatsapp_float:hover {
-  background-color: #25D366; /* Change the background color on hover */
-  transform: scale(1.1); /* Add a slight scale effect on hover */
-}
-
-.whatsapp_float_btn {
-  width: 100%;
-  height: 100%;
-}
-
-/* Optional: Add a subtle box shadow for depth */
-.whatsapp_float {
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }

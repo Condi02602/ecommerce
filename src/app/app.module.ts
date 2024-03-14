@@ -16,10 +16,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import { CustomerLoginRegisterComponent } from './customer-login-register/customer-login-register.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { ProductFeaturedComponent } from './product-featured/product-featured.component';
 import { WhatWeDoComponent } from './what-we-do/what-we-do.component';
 import { OurBrandsComponent } from './our-brands/our-brands.component';
 import { ProductsComponent } from './products/products.component';
@@ -31,10 +29,8 @@ import { CartComponent } from './cart/cart.component';
     SignupComponent,
     LoginComponent,
     HomeComponent,
-    CustomerLoginRegisterComponent,
     HeaderComponent,
     FooterComponent,
-    ProductFeaturedComponent,
     WhatWeDoComponent,
     OurBrandsComponent,
     ProductsComponent,
