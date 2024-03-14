@@ -26,8 +26,8 @@ export class SignupComponent implements OnInit{
       email:["", [Validators.required, Validators.pattern(GlobalConstants.emailRegex)]],
       contact:["", [Validators.required, Validators.pattern(GlobalConstants.contactRegex)]],
       address: ["", [Validators.required]],
-      password:["", [Validators.required, Validators.pattern(GlobalConstants.passwordRegex)]],
-      confirmPassword:["", [Validators.required, Validators.pattern(GlobalConstants.passwordRegex)]]
+      password:["", [Validators.required]],
+      confirmPassword:["", [Validators.required]]
     })
   }
 
@@ -37,23 +37,17 @@ export class SignupComponent implements OnInit{
 
   RegistrationUser(){
     if (this.signupForm.valid) {
-      // Simulate registration process
-      this.simulateRegistration(this.signupForm.value);
+      console.log(this.signupForm.value);
+      this.coreService.openSnackBar('Registration Successful', 'done');
+    setTimeout(() => {
+      this.router.navigate(["/products"]);
+    }, 3000);
     } else {
       this.validateAllFormFields(this.signupForm);
       console.log(this.signupForm.value)
       this.coreService.openSnackBar("Your form is invalid");
+      console.log(this.signupForm.status)
     }
-  }
-
-  private simulateRegistration(userData: any) {
-    // Simulate registration process
-    console.log(userData);
-    // Assuming registration is successful
-    this.coreService.openSnackBar('Registration Successful', 'done');
-    setTimeout(() => {
-      this.router.navigate(["/login"]);
-    }, 3000);
   }
 
   private validateAllFormFields(formGroup: FormGroup) {
