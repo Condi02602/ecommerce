@@ -11,7 +11,7 @@ export class GlobalConstants {
     public static contactRegex:string = "^[e0-9]{10,10}$";
     // public static dateRegex: string = "dd-mm-yyyy";
     public static ageRegex: string = "^(?:[1-9][0-9]?|100)$"; 
-    public static passwordRegex: string = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$";
+    // public static passwordRegex: string = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$";
 
 
     // error
