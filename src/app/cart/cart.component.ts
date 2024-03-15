@@ -35,4 +35,16 @@ export class CartComponent implements OnInit {
     this.cartApi.removeAllCart();
   }
 
+  decreaseQuantity(item: any) {
+    if (item.quantity > 1) { // Ensure quantity doesn't go below 1
+      item.quantity--;
+      this.cartApi.updateCartItem(item);
+    }
+  }
+  
+  increaseQuantity(item: any) {
+    item.quantity++;
+    this.cartApi.updateCartItem(item);
+  }
+
 }

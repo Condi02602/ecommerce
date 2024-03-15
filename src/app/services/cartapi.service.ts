@@ -22,11 +22,23 @@ export class CartapiService {
   }
 
   addToCart(product:any){
-    this.cartDataList.push(product);
+    let productExists = false;
+    this.cartDataList.forEach((element: { id: any; quantity: number; price: number; total: number;}) => {
+      if(element.id === product.id) {
+        element.quantity += 1;
+        element.total = element.quantity * element.price; // Correct the calculation of total price
+        productExists = true;
+      }
+    });
+    if (!productExists) {
+      product.quantity = 1;
+      product.total = product.price; // Set total for the first time addition
+      this.cartDataList.push(product);
+    }
     this.productList.next(this.cartDataList);
     this.getTotalAmount();
-    console.log(this.cartDataList)
-  }
+}
+
 
   getTotalAmount(): number {
     let grandTotal = 0;
@@ -50,4 +62,21 @@ export class CartapiService {
     this.cartDataList = [];
     this.productList.next(this.cartDataList);
   }
+  
+
+  updateCartItem(item: any) {
+    this.cartDataList.forEach((element: any, index: number) => {
+      if (element.id === item.id) {
+        element.quantity = item.quantity; // Update the quantity
+        element.total = item.quantity * element.price; // Recalculate the total
+        this.cartDataList[index] = element;
+        this.productList.next(this.cartDataList);
+        return;
+      }
+    });
+  }
+  
+
+  
+
 }

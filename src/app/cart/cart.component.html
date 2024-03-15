@@ -22,7 +22,15 @@
                             <td><img src="{{item.image}}" alt="" style="width: 120px;"></td>
                             <td style="width: 30%;">{{item.description}}</td>
                             <td style="width: 10%;"><strong>₹{{item.price}}</strong></td>
-                            <td style="width: 10%;">{{item.quantity}}</td>
+                            <td style="width: 10%;">
+                                <button class="btn btn-sm btn-secondary" (click)="decreaseQuantity(item)">
+                                  <i class="fas fa-minus"></i>
+                                </button>
+                                <span>{{item.quantity}}</span>
+                                <button class="btn btn-sm btn-secondary" (click)="increaseQuantity(item)">
+                                  <i class="fas fa-plus"></i>
+                                </button>
+                              </td>                                                          
                             <td style="width: 10%;">{{item.total}}</td>
                             <td><button class="btn btn-danger"><i class="fas fa-trash" (click)="removeProduct(item)"></i></button></td>
                         </tr>
